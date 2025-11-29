@@ -1,6 +1,9 @@
 #!/bin/bash
 set -o errexit
 
+# Install Python dependencies
+pip install -r requirements.txt
+
 # Install Chrome
 apt-get update
 apt-get install -y wget gnupg
@@ -16,4 +19,4 @@ unzip chromedriver_linux64.zip -d /usr/local/bin/
 chmod +x /usr/local/bin/chromedriver
 rm chromedriver_linux64.zip
 
-echo "Chrome and ChromeDriver installed successfully"
+echo "Build completed successfully"
