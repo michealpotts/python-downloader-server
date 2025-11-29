@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
+
 CORS(app)
 
 @app.route("/sora", methods=["POST","OPTIONS"])
@@ -18,6 +19,7 @@ def sora():
     if not data:
         return jsonify({"error": "No data received"}), 400
     signedlink = find_sign_link(data['url'])
+    print("signedlink->>>>>",signedlink)
     return jsonify({"status": "success", "received": signedlink})
 
 if __name__ == "__main__":
