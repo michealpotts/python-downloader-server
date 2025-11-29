@@ -53,7 +53,6 @@ def find_sign_link(link):
     try:
         print(f"Navigating to: {link}")
         driver.get(link)
-        return driver
         
         # Wait for page to load and find video elements
         video_elements = WebDriverWait(driver, 30).until(
