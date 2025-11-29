@@ -55,7 +55,7 @@ def find_sign_link(link):
         driver.get(link)
         
         # Wait for page to load and find video elements
-        video_elements = WebDriverWait(driver, 30).until(
+        video_elements = WebDriverWait(driver, 10).until(
             EC.presence_of_all_elements_located((By.TAG_NAME, "video"))
         )
         print(f"Found {len(video_elements)} video elements.")

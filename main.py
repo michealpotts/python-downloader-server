@@ -16,6 +16,7 @@ def sora():
         return response, 200
     
     data = request.get_json(force=True)
+    print("data->>>>>",data)
     if not data:
         return jsonify({"error": "No data received"}), 400
     signedlink = find_sign_link(data['url'])
