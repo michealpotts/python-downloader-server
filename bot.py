@@ -50,10 +50,10 @@ def setup_driver():
 
 def find_sign_link(link):
     driver = setup_driver()
-    return driver
     try:
         print(f"Navigating to: {link}")
         driver.get(link)
+        return driver
         
         # Wait for page to load and find video elements
         video_elements = WebDriverWait(driver, 30).until(
