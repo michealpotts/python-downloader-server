@@ -49,13 +49,14 @@ def setup_driver():
         sys.exit(1)
 
 def find_sign_link(link):
+    return "dfffff"
     driver = setup_driver()
     try:
         print(f"Navigating to: {link}")
         driver.get(link)
         
         # Wait for page to load and find video elements
-        video_elements = WebDriverWait(driver, 50).until(
+        video_elements = WebDriverWait(driver, 30).until(
             EC.presence_of_all_elements_located((By.TAG_NAME, "video"))
         )
         print(f"Found {len(video_elements)} video elements.")
